@@ -1,0 +1,26 @@
+# Data (download from Kaggle, see README)
+data/
+m5-forecasting-accuracy/
+m5-forecasting-accuracy.zip
+*.zip
+
+# Large generated outputs (regenerate with: python run_pipeline.py)
+outputs/*.parquet
+outputs/*.npz
+outputs/pipeline_log.txt
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local tooling
+.claude/

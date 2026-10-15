@@ -1,0 +1,13 @@
+# Core pipeline
+numpy==2.5.4
+pandas==3.0.6
+pyarrow==26.0.0
+lightgbm==4.7.0
+
+# Dashboard
+streamlit==1.66.0
+plotly==7.1.0
+
+# Development
+pytest==9.1.1
+playwright==1.64.0  # only for scripts/take_screenshots.py
