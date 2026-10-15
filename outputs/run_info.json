@@ -1,0 +1,52 @@
+{
+  "sales_file": "sales_train_validation.csv",
+  "store_id": "CA_1",
+  "n_items": 50,
+  "last_observed_date": "2016-04-24",
+  "simulation_start": "2016-01-04",
+  "simulation_end": "2016-04-24",
+  "simulation_days": 112,
+  "config": {
+    "model": {
+      "horizon": 28,
+      "n_folds": 4,
+      "first_train_origin": 120,
+      "train_origin_stride": 5,
+      "quantiles": [
+        0.1,
+        0.5,
+        0.9
+      ],
+      "seed": 42,
+      "lgb_params": {
+        "learning_rate": 0.05,
+        "num_leaves": 63,
+        "min_data_in_leaf": 100,
+        "feature_fraction": 0.8,
+        "bagging_fraction": 0.8,
+        "bagging_freq": 1,
+        "lambda_l2": 1.0,
+        "verbose": -1
+      },
+      "num_boost_round": 300
+    },
+    "sim": {
+      "lead_time": 7,
+      "review_period": 7,
+      "shelf_life_choices": [
+        30,
+        60,
+        90,
+        180
+      ],
+      "shelf_life_multiplier": 1.0,
+      "cost_ratio": 0.7,
+      "annual_holding_rate": 0.25,
+      "service_level": 0.98,
+      "safety_days": 7,
+      "expiry_aware": true,
+      "seed": 42
+    }
+  },
+  "runtime_seconds": 149.9
+}
