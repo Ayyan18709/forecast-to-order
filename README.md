@@ -220,15 +220,3 @@ Chrome.
   independent daily errors, which hurts at long lead times (see results).
 * **16 weeks of replay.** Long enough to see the trade-offs, too short to capture full seasonality.
 
-## Next steps
-
-* **Full dataset:** all 10 stores and ~3,000 products. The pipeline is already parameterised (`--store`,
-  `--items`); the main change would be moving the feature builder from dense matrices to chunked processing.
-* **Better ordering policies:** directly simulated multi-week demand paths (quantile-based sampling) instead of the
-  normal approximation; per-item service levels from the cost of a lost sale vs. the cost of waste (newsvendor
-  critical ratio); case-pack and minimum-order constraints; flagging likely supply-side zeros so the model stops
-  treating them as demand.
-* **RL-based replenishment:** `InventoryEnv` already exposes `reset()` / `step(order)` with a cost-based reward and
-  an observation that includes batch ages and the probabilistic forecast. Next would be a Gymnasium wrapper, a
-  PPO/SAC agent trained across items, and benchmarking it against the forecast policy on the same trade-off curve.
-* **Pharma realism:** real lot-level expiry data, minimum remaining shelf life at receipt, returns to wholesaler.
